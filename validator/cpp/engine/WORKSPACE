@@ -10,17 +10,17 @@ http_archive(
 
 http_archive(
     name = "com_google_googletest",
-    sha256 = "1a44bc8668c9c1eb876dbb29a8c615fb825f4b21ca59e0217ea602501a92f493",
-    strip_prefix = "googletest-df7fee587d442b372ef43bd66c6a2f5c9af8c5eb",
-    urls = ["https://github.com/google/googletest/archive/df7fee587d442b372ef43bd66c6a2f5c9af8c5eb.zip"],  # 2019-01-07
+    sha256 = "7c719b5553add25783309e18e3fb2ae5c443b63c502e532118e1bc833f528745",
+    strip_prefix = "googletest-a0ced33ac6df214966bb90ba036e0a5666dca14e",
+    urls = ["https://github.com/google/googletest/archive/a0ced33ac6df214966bb90ba036e0a5666dca14e.zip"],  # 2019-01-07
 )
 
 http_archive(
     name = "com_googlesource_code_re2",
-    sha256 = "bbd64020aad8252c47e71edab7c9d3b77e12ccd874baa01d86e19e5fa082350f",
-    strip_prefix = "re2-13ebb377c6ad763ca61d12dd6f88b1126bd0b911",
+    sha256 = "69ddc658df387b4d2d51c6fe2d0c62933220d17e1465e4071a5673c01c9bcd2d",
+    strip_prefix = "re2-11073deb73b3d01018308863c0bcdfd0d51d3e70",
     urls = [
-        "https://github.com/google/re2/archive/13ebb377c6ad763ca61d12dd6f88b1126bd0b911.tar.gz",
+        "https://github.com/google/re2/archive/11073deb73b3d01018308863c0bcdfd0d51d3e70.tar.gz",
     ],
 )
 
