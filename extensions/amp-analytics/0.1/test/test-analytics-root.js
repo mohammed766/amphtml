@@ -23,7 +23,6 @@ import {
   VisibilityManagerForDoc,
   VisibilityManagerForEmbed,
 } from '../visibility-manager';
-import {toggleExperiment} from '../../../../src/experiments';
 import {user} from '../../../../src/log';
 
 describes.realWin('AmpdocAnalyticsRoot', {amp: 1}, (env) => {
@@ -339,11 +338,11 @@ describes.realWin('AmpdocAnalyticsRoot', {amp: 1}, (env) => {
         child.setAttribute('data-vars-id', 'child1');
         child2.setAttribute('data-vars-id', 'child2');
         child3.setAttribute('data-vars-id', 'child3');
-        toggleExperiment(win, 'visibility-trigger-improvements', true);
       });
 
       afterEach(() => {
-        toggleExperiment(win, 'visibility-trigger-improvements', false);
+        /* toggleExperiment(win, 'visibility-trigger-improvements', false) // launched: true */
+        false;
       });
 
       it('should find element and elements by selector', async () => {
@@ -355,7 +354,8 @@ describes.realWin('AmpdocAnalyticsRoot', {amp: 1}, (env) => {
           child2,
         ]);
         // Check that non-experiment works
-        toggleExperiment(win, 'visibility-trigger-improvements', false);
+        /* toggleExperiment(win, 'visibility-trigger-improvements', false) // launched: true */
+        false;
         expect(
           await root.getElements(body, '.notMyClass', null)
         ).to.deep.equal([child3]);
@@ -421,7 +421,8 @@ describes.realWin('AmpdocAnalyticsRoot', {amp: 1}, (env) => {
       });
 
       it('should find non AMP element with single selector', async () => {
-        toggleExperiment(win, 'visibility-trigger-improvements', false);
+        /* toggleExperiment(win, 'visibility-trigger-improvements', false) // launched: true */
+        false;
         child.classList.remove('i-amphtml-element');
         child.removeAttribute('data-vars-id');
         child.classList.add('myClass');
@@ -753,13 +754,12 @@ describes.realWin(
         child.setAttribute('data-vars-id', '123');
         child2.setAttribute('data-vars-id', '456');
         child3.setAttribute('data-vars-id', '789');
-
-        toggleExperiment(win, 'visibility-trigger-improvements', true);
       });
 
       afterEach(() => {
         child.classList.add('i-amphtml-element');
-        toggleExperiment(win, 'visibility-trigger-improvements', false);
+        /* toggleExperiment(win, 'visibility-trigger-improvements', false) // launched: true */
+        false;
       });
 
       it('should find all elements by selector', async () => {
@@ -767,7 +767,8 @@ describes.realWin(
 
         expect(elements).to.deep.equals([child, child2]);
         // Check that non-experiment version works
-        toggleExperiment(win, 'visibility-trigger-improvements', false);
+        /* toggleExperiment(win, 'visibility-trigger-improvements', false) // launched: true */
+        false;
         expect(
           await root.getElements(body, '.notMyClass', null)
         ).to.deep.equals([child3]);
@@ -829,7 +830,8 @@ describes.realWin(
       });
 
       it('should find non AMP element with single selector', async () => {
-        toggleExperiment(win, 'visibility-trigger-improvements', false);
+        /* toggleExperiment(win, 'visibility-trigger-improvements', false) // launched: true */
+        false;
         child.classList.remove('i-amphtml-element');
         expect(await root.getElements(body, '.myClass', null)).to.deep.equal([
           child,
