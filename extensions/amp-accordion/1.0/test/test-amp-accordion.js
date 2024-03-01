@@ -55,7 +55,6 @@ describes.realWin(
       win = env.win;
       html = htmlFor(win.document);
       toggleExperiment(win, 'bento-accordion', true, true);
-      toggleExperiment(win, 'amp-accordion-display-locking', true, true);
       element = html`
         <amp-accordion layout="fixed" width="300" height="200">
           <section expanded id="section1">
@@ -658,7 +657,6 @@ describes.realWin(
       let defaultBeforeMatch;
 
       beforeEach(async () => {
-        toggleExperiment(win, 'amp-accordion-display-locking', true);
         element = html`
           <amp-accordion>
             <section>
@@ -682,7 +680,8 @@ describes.realWin(
       afterEach(() => {
         win.CSS.supports = defaultCssSupports;
         win.document.body.onbeforematch = defaultBeforeMatch;
-        toggleExperiment(win, 'amp-accordion-display-locking', false);
+        /* toggleExperiment(win, 'amp-accordion-display-locking', false) // launched: true */
+        false;
       });
 
       it('should expand collpased section with beforematch event', async () => {
