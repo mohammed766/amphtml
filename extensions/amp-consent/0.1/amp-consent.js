@@ -122,10 +122,12 @@ export class AmpConsent extends AMP.BaseElement {
     this.matchedGeoGroup_ = null;
 
     /** @private {?boolean} */
-    this.isTcfPostMessageProxyExperimentOn_ = isExperimentOn(
+    this.isTcfPostMessageProxyExperimentOn_ =
+      /* isExperimentOn(
       this.win,
       'tcf-post-message-proxy-api'
-    );
+    ) // launched: true */
+      true;
 
     /** @private {?boolean} */
     this.isGranularConsentExperimentOn_ = isExperimentOn(
