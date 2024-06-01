@@ -32,7 +32,6 @@ import {AmpdocAnalyticsRoot} from '../analytics-root';
 import {Deferred} from '../../../../src/utils/promise';
 import {Signals} from '../../../../src/utils/signals';
 import {macroTask} from '../../../../testing/yield';
-import {toggleExperiment} from '../../../../src/experiments';
 
 describes.realWin('Events', {amp: 1}, (env) => {
   let win;
@@ -2001,7 +2000,6 @@ describes.realWin('Events', {amp: 1}, (env) => {
         let target2;
 
         beforeEach(() => {
-          toggleExperiment(win, 'visibility-trigger-improvements', true);
           readyPromise = Promise.resolve();
           unlisten = env.sandbox.spy();
           unlisten2 = env.sandbox.spy();
@@ -2045,7 +2043,8 @@ describes.realWin('Events', {amp: 1}, (env) => {
             });
           }
 
-          toggleExperiment(win, 'visibility-trigger-improvements', false);
+          /* toggleExperiment(win, 'visibility-trigger-improvements', false) // launched: true */
+          false;
         });
 
         it('should fire event per selector', async () => {
