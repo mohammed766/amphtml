@@ -996,12 +996,11 @@ describes.realWin(
       let ampConsent;
       let consentElement;
 
-      beforeEach(() => {
-        toggleExperiment(win, 'tcf-post-message-proxy-api', true);
-      });
+      beforeEach(() => {});
 
       afterEach(() => {
-        toggleExperiment(win, 'tcf-post-message-proxy-api', false);
+        /* toggleExperiment(win, 'tcf-post-message-proxy-api', false) // launched: true */
+        false;
       });
 
       describe('config', () => {
