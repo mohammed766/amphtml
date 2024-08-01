@@ -44,8 +44,8 @@ class AmpAccordion extends BaseElement {
 
     const {win} = this;
     const displayLockingExperimentEnabled =
-      isExperimentOn(win, 'amp-accordion-display-locking') &&
-      win.document.body.onbeforematch !== undefined;
+      /* isExperimentOn(win, 'amp-accordion-display-locking') // launched: true */
+      true && win.document.body.onbeforematch !== undefined;
 
     if (displayLockingExperimentEnabled) {
       this.element.classList.add('i-amphtml-display-locking');
