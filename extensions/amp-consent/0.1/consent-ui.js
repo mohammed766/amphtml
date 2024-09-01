@@ -32,7 +32,6 @@ import {getConsentStateValue} from './consent-info';
 import {getData} from '../../../src/event-helper';
 import {getServicePromiseForDoc} from '../../../src/service';
 import {htmlFor} from '../../../src/static-template';
-import {isExperimentOn} from '../../../src/experiments';
 import {setImportantStyles, setStyles, toggle} from '../../../src/style';
 
 const TAG = 'amp-consent-ui';
@@ -183,10 +182,12 @@ export class ConsentUI {
     /** @private {?Promise<string>} */
     this.promptUISrcPromise_ = null;
 
-    this.isGranularConsentExperimentOn_ = isExperimentOn(
+    this.isGranularConsentExperimentOn_ =
+      /* isExperimentOn(
       this.win_,
       'amp-consent-granular-consent'
-    );
+    ) // launched: true */
+      true;
 
     this.init_(config, opt_postPromptUI);
   }
