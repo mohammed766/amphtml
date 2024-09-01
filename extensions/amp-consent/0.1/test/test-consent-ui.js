@@ -31,7 +31,6 @@ import {
   registerServiceBuilder,
   resetServiceForTesting,
 } from '../../../../src/service';
-import {toggleExperiment} from '../../../../src/experiments';
 import {user} from '../../../../src/log';
 import {whenCalled} from '../../../../testing/test-helper.js';
 
@@ -377,7 +376,6 @@ describes.realWin(
 
       // TODO(micajuineho): consolidate w/ test above after exp done
       it('should pass purpose consents to the iframe', async () => {
-        toggleExperiment(win, 'amp-consent-granular-consent', true);
         const config = dict({
           'promptUISrc': 'https://promptUISrc',
           'clientConfig': {
@@ -405,7 +403,8 @@ describes.realWin(
             'purposeConsents': {'abc': 1},
           })
         );
-        toggleExperiment(win, 'amp-consent-granular-consent', false);
+        /* toggleExperiment(win, 'amp-consent-granular-consent', false) // launched: true */
+        false;
       });
 
       it('should pass the promptTrigger reason to the iframe', function* () {
