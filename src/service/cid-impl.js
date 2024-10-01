@@ -33,7 +33,6 @@ import {getCookie, setCookie} from '../cookies';
 import {getCryptoRandomBytesArray} from '../utils/bytes';
 import {getServiceForDoc, registerServiceBuilderForDoc} from '../service';
 import {getSourceOrigin, isProxyOrigin, parseUrlDeprecated} from '../url';
-import {isExperimentOn} from '../../src/experiments';
 import {isIframed} from '../dom';
 import {parseJson, tryParseJson} from '../json';
 import {tryResolve} from '../utils/promise';
@@ -181,7 +180,9 @@ class Cid {
     this.apiKeyMap_ = null;
 
     /** @const {boolean} */
-    this.isBackupCidExpOn = isExperimentOn(this.ampdoc.win, 'amp-cid-backup');
+    this.isBackupCidExpOn =
+      /* isExperimentOn(this.ampdoc.win, 'amp-cid-backup') // launched: true */
+      true;
   }
 
   /** @override */

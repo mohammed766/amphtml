@@ -41,7 +41,6 @@ import {dev, devAssert, rethrowAsync, user, userAssert} from './log';
 import {getIntersectionChangeEntry} from './utils/intersection-observer-3p-host';
 import {getMode} from './mode';
 import {getSchedulerForDoc} from './service/scheduler';
-import {isExperimentOn} from './experiments';
 import {setStyle} from './style';
 import {shouldBlockOnConsentByMeta} from './consent';
 import {startupChunk} from './chunk';
@@ -499,10 +498,12 @@ function createBaseCustomElementClass(win, elementConnectedCallback) {
       // Wait for consent.
       const consentPromise = implPromise.then(() => {
         const policyId = this.getConsentPolicy_();
-        const isGranularConsentExperimentOn = isExperimentOn(
+        const isGranularConsentExperimentOn =
+          /* isExperimentOn(
           win,
           'amp-consent-granular-consent'
-        );
+        ) // launched: true */
+          true;
         const purposeConsents =
           isGranularConsentExperimentOn && !policyId
             ? this.getPurposesConsent_()
