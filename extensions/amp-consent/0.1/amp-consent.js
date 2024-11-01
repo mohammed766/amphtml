@@ -50,7 +50,6 @@ import {dict, hasOwn} from '../../../src/utils/object';
 import {getData} from '../../../src/event-helper';
 import {getServicePromiseForDoc} from '../../../src/service';
 import {isArray, isEnumValue, isObject} from '../../../src/types';
-import {isExperimentOn} from '../../../src/experiments';
 import {toggle} from '../../../src/style';
 
 const CONSENT_STATE_MANAGER = 'consentStateManager';
@@ -130,10 +129,12 @@ export class AmpConsent extends AMP.BaseElement {
       true;
 
     /** @private {?boolean} */
-    this.isGranularConsentExperimentOn_ = isExperimentOn(
+    this.isGranularConsentExperimentOn_ =
+      /* isExperimentOn(
       this.win,
       'amp-consent-granular-consent'
-    );
+    ) // launched: true */
+      true;
 
     /** @private {?Promise<?Array>} */
     this.purposeConsentRequired_ = this.isGranularConsentExperimentOn_
