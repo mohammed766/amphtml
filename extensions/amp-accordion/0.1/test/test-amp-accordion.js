@@ -26,7 +26,6 @@ import {
   whenUpgradedToCustomElement,
 } from '../../../../src/dom';
 import {poll} from '../../../../testing/iframe';
-import {toggleExperiment} from '../../../../src/experiments';
 
 describes.realWin(
   'amp-accordion',
@@ -202,8 +201,6 @@ describes.realWin(
     });
 
     it('should expand when beforematch event is triggered on a collapsed section', async () => {
-      // Enable display locking feature.
-      toggleExperiment(win, 'amp-accordion-display-locking', true);
       doc.body.onbeforematch = null;
       await getAmpAccordion();
       const section = doc.querySelector('section:not([expanded])');
@@ -216,7 +213,8 @@ describes.realWin(
       expect(header.getAttribute('aria-expanded')).to.equal('true');
 
       // Reset display locking feature
-      toggleExperiment(win, 'amp-accordion-display-locking', false);
+      /* toggleExperiment(win, 'amp-accordion-display-locking', false) // launched: true */
+      false;
       doc.body.onbeforematch = undefined;
     });
 
