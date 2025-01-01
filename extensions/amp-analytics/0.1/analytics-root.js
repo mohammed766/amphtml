@@ -25,7 +25,6 @@ import {
 import {dev, user, userAssert} from '../../../src/log';
 import {getMode} from '../../../src/mode';
 import {isArray} from '../../../src/types';
-import {isExperimentOn} from '../../../src/experiments';
 import {layoutRectLtwh} from '../../../src/layout-rect';
 import {map} from '../../../src/utils/object';
 import {provideVisibilityManager} from './visibility-manager';
@@ -342,7 +341,8 @@ export class AnalyticsRoot {
    */
   getElements(context, selectors, selectionMethod) {
     if (
-      isExperimentOn(this.ampdoc.win, 'visibility-trigger-improvements') &&
+      /* isExperimentOn(this.ampdoc.win, 'visibility-trigger-improvements') // launched: true */
+      true &&
       isArray(selectors)
     ) {
       userAssert(
