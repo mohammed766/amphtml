@@ -154,24 +154,10 @@ export const EXPERIMENTS = [
     cleanupIssue: 'N/A',
   },
   {
-    id: 'adsense-ad-size-optimization',
-    name:
-      'Per publisher server side settings for changing the ad size ' +
-      'to responsive.',
-    spec: 'https://github.com/ampproject/amphtml/issues/23568',
-    cleanupIssue: 'https://github.com/ampproject/amphtml/issues/24165',
-  },
-  {
     id: 'amp-stream-gallery',
     name: 'Enables component',
     spec: 'https://github.com/ampproject/amphtml/issues/20595',
     cleanupIssue: 'https://github.com/ampproject/amphtml/issues/26709',
-  },
-  {
-    id: 'visibility-trigger-improvements',
-    name: 'AMP Analytics Visibility Trigger Improvements',
-    spec: 'https://github.com/ampproject/amphtml/issues/26823',
-    cleanupIssue: 'https://github.com/ampproject/amphtml/issues/26823',
   },
   {
     id: 'a4a-no-signing',
@@ -179,20 +165,9 @@ export const EXPERIMENTS = [
     spec: 'https://github.com/ampproject/amphtml/issues/27189',
   },
   {
-    id: 'expand-json-targeting',
-    name: 'Allow CLIENT_ID in doubleclick json targeting feature',
-    spec: 'https://github.com/ampproject/amphtml/issues/25190',
-  },
-  {
     id: 'auto-ads-layout-callback',
     name: 'Move ads placement into layoutCallback',
     spec: 'https://github.com/ampproject/amphtml/issues/27068',
-  },
-  {
-    id: 'amp-cid-backup',
-    name: 'Backup AMP-generated CIDs to Storage.',
-    spec: 'https://github.com/ampproject/amphtml/issues/29484',
-    cleanupIssue: 'https://github.com/ampproject/amphtml/issues/29484',
   },
   {
     id: 'layout-aspect-ratio-css',
@@ -200,19 +175,9 @@ export const EXPERIMENTS = [
     spec: 'https://github.com/ampproject/amphtml/issues/30291',
   },
   {
-    id: 'tcf-post-message-proxy-api',
-    name: 'Proxy for TCF PostMessageAPI to send TCData to 3p iframes',
-    spec: 'https://github.com/ampproject/amphtml/issues/30385',
-  },
-  {
     id: 'dfp-render-on-idle-cwv-exp',
     name: 'To measure the CWV impact of ads idle rendering',
     spec: 'https://github.com/ampproject/amphtml/issues/31436',
-  },
-  {
-    id: 'amp-consent-granular-consent',
-    name: 'Client-side granular consent',
-    spec: 'https://github.com/ampproject/amphtml/issues/31607',
   },
   {
     id: 'amp-story-page-attachment-ui-v2',
