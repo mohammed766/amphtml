@@ -3,7 +3,6 @@
   "allow-url-opt-in": [],
   "canary": 0,
   "a4aProfilingRate": 0.01,
-  "amp-accordion-display-locking": 1,
   "doubleclickSraExp": 0.01,
   "doubleclickSraReportExcludedBlock": 0.1,
   "expand-json-targeting": 1,
