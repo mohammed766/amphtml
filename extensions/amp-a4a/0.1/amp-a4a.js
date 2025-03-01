@@ -56,7 +56,7 @@ import {
   getConsentPolicyState,
 } from '../../../src/consent';
 import {getContextMetadata} from '../../../src/iframe-attributes';
-import {getExperimentBranch, isExperimentOn} from '../../../src/experiments';
+import {getExperimentBranch} from '../../../src/experiments';
 import {getExtensionsFromMetadata} from './amp-ad-utils';
 import {getMode} from '../../../src/mode';
 import {insertAnalyticsElement} from '../../../src/extension-analytics';
@@ -2586,7 +2586,8 @@ export function isPlatformSupported(win) {
   // Require Shadow DOM support for a4a.
   if (
     !isNative(win.Element.prototype.attachShadow) &&
-    isExperimentOn(win, 'disable-a4a-non-sd')
+    /* isExperimentOn(win, 'disable-a4a-non-sd') // launched: true */
+    true
   ) {
     return false;
   }
